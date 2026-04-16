@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Tech Stack Used
+Next.js (App Router)
+TypeScript
+Ant Design (UI components)
+TanStack Table (table structure)
+React Hooks (useState, useMemo, useEffect)
 
-## Getting Started
+Features Implemented :
 
-First, run the development server:
+Inventory Dashboard :
+Displays 50,000+ records
+Search functionality (debounced)
+Pagination (to handle large data efficiently)
+Clean table UI using TanStack Table
+Actions menu (View / Edit / Delete)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Detail Page :
+Click on "View" to navigate to detail page
+Implemented using Next.js Server Component
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+UI Enhancements :
+Status color coding (Active / Inactive)
+Type color tags (Type A, B, C)
+Ant Design components for consistent UI
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Loading State :
+Skeleton loading using Ant Design
+Smooth loading experience
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Performance Optimizations :
+Pagination used to limit DOM rendering (only 50 rows at a time)
+Debounced search to reduce unnecessary filtering
+useMemo used to avoid expensive recalculations
+Columns memoized to prevent re-renders
+Avoided rendering full dataset in UI
 
-## Learn More
+Accessibility :
+Semantic structure used
+Keyboard navigation supported
+Accessible labels added where needed
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Key Decisions :
+Used pagination instead of full rendering to avoid UI freezing
+Used TanStack Table for flexible and scalable table structure
+Used Ant Design for faster UI development and consistency
+Avoided overusing global state (Redux) since not required
